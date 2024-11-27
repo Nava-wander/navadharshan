@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INITRABBIT PROJECT-1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+            background-image: url(https://img.freepik.com/premium-photo/colorful-background-with-yellow-blue-geometric-pattern_481527-25413.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 42px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        nav {
+            margin-top: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            text-transform: uppercase;
+            font-weight: bold;
+            padding: 8px 20px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #f0a500;
+            color: #333;
+        }
+
+        main {
+            padding: 30px 0;
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        section {
+            display: none;
+            padding: 40px 30px;
+        }
+
+        h2 {
+            font-size: 30px;
+            color: #f0a500;
+            margin-bottom: 20px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .home-section {
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .home-section h1 {
+            font-size: 50px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+
+        .workshop-invite a {
+            color: #f0a500;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .workshop-invite a:hover {
+            text-decoration: underline;
+        }
+
+        .about-section,
+        .topics-section,
+        .location-section,
+        .contact-section {
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .about-section p,
+        .topics-section ul,
+        .contact-form form {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        .about-section p {
+            line-height: 1.6;
+            font-size: 20px;
+        }
+
+        .topics-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .topics-section .topic {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 280px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .topics-section .topic:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .topics-section .topic h3 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .topics-section .topic p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .topics-section .topic a {
+            font-weight: bold;
+            color: #f0a500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .topics-section .topic a:hover {
+            color: #d78e00;
+        }
+
+        .location-image {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .location-image img {
+            width: 80%;
+            border-radius: 15px;
+            border: 5px solid #f0a500;
+        }
+
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form button {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 2px solid #f0a500;
+            font-size: 18px;
+        }
+
+        .contact-form button {
+            background-color: #f0a500;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #d78e00;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+
+        /* Registration Form */
+        .form-container input,
+        .form-container button {
+            padding: 12px;
+            width: 100%;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 2px solid #f0a500;
+            font-size: 18px;
+        }
+
+        .form-container button {
+            background-color: #f0a500;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-container button:hover {
+            background-color: #d78e00;
+        }
+
+        .social a {
+            margin-right: 20px;
+            font-size: 22px;
+            color: #f0a500;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social a:hover {
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>INITRABBIT PROJECT-1</h1>
+        <nav>
+            <ul>
+                <li><a onclick="showSection('home')">Home</a></li>
+                <li><a onclick="showSection('about')">About Us</a></li>
+                <li><a onclick="showSection('topics')">Workshop Topics</a></li>
+                <li><a onclick="showSection('location')">Location</a></li>
+                <li><a onclick="showSection('contact')">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="home-section">
+            <h1>Welcome PROJECT-1</h1>
+            <p class="workshop-invite">Join our amazing workshops to boost your skills and knowledge. <a href="#topics" onclick="showSection('topics')">Click here to register for a workshop now!</a></p>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="about-section">
+            <h2>About Us</h2>
+            <p>INITRABBIT is a dynamic platform offering various skill development workshops. Our mission is to empower individuals with the knowledge and tools necessary for career success. We aim to make learning engaging, interactive, and rewarding. Join us to unlock your full potential!</p>
+        </section>
+
+        <!-- Workshop Topics Section -->
+        <section id="topics" class="topics-section">
+            <h2>Workshops Available</h2>
+            <div class="topic">
+                <h3>Full Stack development</h3>
+                <p>Learn the basics of web design and development with HTML, CSS, and JavaScript in this hands-on workshop.</p>
+                <a href="#webdev" onclick="showSection('webdev')">Register Now</a>
+            </div>
+            <div class="topic">
+                <h3>Fundamentals of Artificial Intelligence</h3>
+                <p>Explore the world of artificial intelligence and machine learning with practical, real-world applications.</p>
+                <a href="#ml" onclick="showSection('ml')">Register Now</a>
+            </div>
+            <div class="topic">
+                <h3>Python Basics</h3>
+                <p>Understand the core principles of Python Programming technology and its applications in various industries.</p>
+                <a href="#blockchain" onclick="showSection('blockchain')">Register Now</a>
+            </div>
+        </section>
+
+        <!-- Individual Workshop Registration Forms -->
+
+        <!-- Web Development -->
+        <section id="webdev" class="form-container">
+            <h2>Full stack Development Workshop Registration</h2>
+            <form>
+                <input type="text" name="name" placeholder="Enter your name" required>
+                <input type="email" name="email" placeholder="Enter your email" required>
+                <button type="submit">Register</button>
+            </form>
+        </section>
+
+        <!-- Machine Learning -->
+        <section id="ml" class="form-container">
+            <h2>Artificial Intelligence Workshop Registration</h2>
+            <form>
+                <input type="text" name="name" placeholder="Enter your name" required>
+                <input type="email" name="email" placeholder="Enter your email" required>
+                <button type="submit">Register</button>
+            </form>
+        </section>
+
+        <!-- Blockchain -->
+        <section id="blockchain" class="form-container">
+            <h2>Python Programming Workshop Registration</h2>
+            <form>
+                <input type="text" name="name" placeholder="Enter your name" required>
+                <input type="email" name="email" placeholder="Enter your email" required>
+                <button type="submit">Register</button>
+            </form>
+        </section>
+
+        <!-- Location Section -->
+          <section id="location" class="location-section">
+            <h2>Our Location</h2>
+            <div class="location-image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3tiNOO4g8aA0JWZgzNiVFgXXBuoEzQBHdxQ&s" alt="Mohamed Sathak A.J. College of Engineering">
+            </div>
+            <p>Find us at Mohamed Sathak A.J. College of Engineering. <br> Visit the location on <a href="https://www.google.com/maps?sca_esv=396436077eb24e00&rlz=1C1ONGR_enIN1071IN1071&output=search&q=mohamed+sathak+aj+college+of+engineering+location" target="_blank">Google Maps</a>.</p>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <h2>Contact Us</h2>
+            <div class="contact-form">
+                <form>
+                    <input type="text" name="name" placeholder="Enter your name" required>
+                    <input type="email" name="email" placeholder="Enter your email" required>
+                    <textarea name="message" placeholder="Enter your message" required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy;Navadharshan's PROJECT-1</p>
+            <div class="social">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+
+                <a href="#">LinkedIn</a>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        function showSection(section) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach((sec) => {
+                sec.style.display = 'none';
+            });
+            document.getElementById(section).style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>
+
+
